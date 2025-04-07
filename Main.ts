@@ -6,7 +6,7 @@ const promedioDiv: HTMLElement = document.getElementById('promedio')!;
 
 renderSeriesInTable(series);
 
-promedioDiv.innerHTML = `Promedio de temporadas: ${calcularPromedioTemporadas(series)}`;
+promedioDiv.innerHTML = `Seasons average: ${calcularPromedioTemporadas(series)}`;
 
 function renderSeriesInTable(series: Serie[]): void {
   console.log('Desplegando series');

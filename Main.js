@@ -2,7 +2,7 @@ import { series } from './data.js';
 var seriesTbody = document.getElementById('series');
 var promedioDiv = document.getElementById('promedio');
 renderSeriesInTable(series);
-promedioDiv.innerHTML = "Promedio de temporadas: ".concat(calcularPromedioTemporadas(series));
+promedioDiv.innerHTML = "Seasons average: ".concat(calcularPromedioTemporadas(series));
 function renderSeriesInTable(series) {
     console.log('Desplegando series');
     series.forEach(function (serie) {
