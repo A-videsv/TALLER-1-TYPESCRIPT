@@ -1,23 +1,18 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const Data_js_1 = require("./Data.js");
-let seriesTbody = document.getElementById('series');
-const promedioDiv = document.getElementById('promedio');
-renderSeriesInTable(Data_js_1.series);
-promedioDiv.innerHTML = `Promedio de temporadas: ${calcularPromedioTemporadas(Data_js_1.series)}`;
+import { series } from './data.js';
+var seriesTbody = document.getElementById('series');
+var promedioDiv = document.getElementById('promedio');
+renderSeriesInTable(series);
+promedioDiv.innerHTML = "Promedio de temporadas: ".concat(calcularPromedioTemporadas(series));
 function renderSeriesInTable(series) {
     console.log('Desplegando series');
-    series.forEach((serie) => {
-        let trElement = document.createElement("tr");
-        trElement.innerHTML = `<td>${serie.id}</td>
-                           <td>${serie.nombre}</td>
-                           <td>${serie.canal}</td>
-                           <td>${serie.temporadas}</td>`;
+    series.forEach(function (serie) {
+        var trElement = document.createElement("tr");
+        trElement.innerHTML = "<td>".concat(serie.id, "</td>\n                           <td>").concat(serie.nombre, "</td>\n                           <td>").concat(serie.canal, "</td>\n                           <td>").concat(serie.temporadas, "</td>");
         seriesTbody.appendChild(trElement);
     });
 }
 function calcularPromedioTemporadas(series) {
-    let totalSeasons = 0;
-    series.forEach((serie) => totalSeasons += serie.temporadas);
+    var totalSeasons = 0;
+    series.forEach(function (serie) { return totalSeasons += serie.temporadas; });
     return totalSeasons / series.length;
 }
